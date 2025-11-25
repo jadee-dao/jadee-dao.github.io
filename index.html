@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadelynn Dao Mac - PhD Student</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-top">
+                <div class="title-block">
+                    <h1>Jadelynn Dao</h1>
+                    <p class="subtitle" style="color:  var(--color-accent-blue);">CS PhD Student @ Stanford</p>
+                </div>
+                <div class="social-icons">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://www.linkedin.com/in/jadelynn-dao/" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                </div>
+            </div>
+            <nav>
+                <a href="#about" class="nav-tab">About</a>
+                <a href="#news" class="nav-tab">News</a>
+                <a href="#publications" class="nav-tab">Publications</a>
+                <a href="#contact" class="nav-tab">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="profile-layout">
+                <div class="profile-text">
+                    <p>
+                        I am a first-year PhD student in Computer Science at Stanford SAIL! Currently, I am rotating with
+                        Prof. Marco Pavone at the <a href="https://stanfordasl.github.io/">Autonomous Systems Lab</a>,
+                        where I study how reasoning techniques can improve decision-making and perception in robotics.
+                        I am broadly interested in making robots and agents more reliable and generalizable in dynamic,
+                        complex, unseen environments.
+                    </p>
+                    <p>
+                        Previously, I completed my undergraduate studies at Caltech, where I focused on sensor algorithms
+                        for wearable systems and multimodal learning. I have also spent time as a research intern at
+                        Google, Apple, and NASA JPL.
+                    </p>
+                    <p>
+                        I am fortunate to be supported by the NSF Graduate Research Fellowship and a Stanford Graduate
+                        Fellowship. I also am a venture capital fellow with <a href="https://pear.vc/how-we-invest/our-verticals/ai/">Pear VC</a>.
+                    </p>
+                </div>
+                <div class="profile-photo">
+                    <img src="images/profile.png" alt="Jadelynn Dao" class="profile-img">
+                </div>
+            </div>
+        </section>
+
+        <section id="news">
+            <h2>News</h2>
+            <ul id="news-list" class="news-list">
+                <!-- News items will be inserted here by JavaScript -->
+                <li>Loading news...</li>
+            </ul>
+            <div style="margin-top: 1rem; text-align: right;">
+                <a href="news.html" style="font-weight: 600; font-size: 0.9rem;">View all news &rarr;</a>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+            <div id="publications-list" class="publications-list">
+                <!-- Publications will be inserted here by JavaScript -->
+                <p>Loading publications...</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>
+                jadelynn [at] stanford [dot] edu<br>
+                <a href="#">GitHub</a> | <a href="#">Google Scholar</a> | <a href="#">LinkedIn</a> | <a href="#">X</a>
+            </p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Last updated: November 2025.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadNews(3);
+        });
+    </script>
+</body>
+
+</html>

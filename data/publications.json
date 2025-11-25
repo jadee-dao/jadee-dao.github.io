@@ -1,0 +1,54 @@
+[
+    {
+        "title": "Stressomic: A wearable microfluidic biosensor for dynamic profiling of multiple stress hormones in sweat",
+        "authors": "Tu, Yeom, Ulloa, Solomon, Min, Heng, Kim, Dao, Vemu, Pang, Wang, Kim, Gao*",
+        "venue": "Science Advances",
+        "year": "2025",
+        "image": "images/stressomic.png",
+        "links": [
+            {
+                "name": "PDF",
+                "url": "https://www.science.org/doi/10.1126/sciadv.adx6491"
+            }
+        ]
+    },
+    {
+        "title": "Physiological Biomarkers of State Anxiety: Feature-Based Algorithm Development and Validation Using Electrooculography and Electrodermal Activity During a Cold Pressor Test",
+        "authors": "Dao, Liu, Solomon, Solomon*",
+        "venue": "Journal of Medical Internet Research and PubMed",
+        "year": "2025",
+        "image": "images/anxiety.png",
+        "links": [
+            {
+                "name": "PDF",
+                "url": "https://xmed.jmir.org/2025/1/e69472"
+            }
+        ]
+    },
+    {
+        "title": "Touchless, Gesture-based Human Interface Device",
+        "authors": "Dao, Deepak",
+        "venue": "US Patent",
+        "year": "2024",
+        "image": "images/gesture.png",
+        "links": [
+            {
+                "name": "Google Patents",
+                "url": "https://patents.google.com/patent/US12105884B2"
+            }
+        ]
+    },
+    {
+        "title": "A comprehensive map of martian South Polar region araneiform locations and morphological analysis",
+        "authors": "Mc Keown, Diniega, Dao, Hansen, Portyankina, Piqueux, Aye",
+        "venue": "American Geophysical Union Fall Meeting (Poster)",
+        "year": "2022",
+        "image": "images/mars.png",
+        "links": [
+            {
+                "name": "Abstract",
+                "url": "https://ui.adsabs.harvard.edu/abs/2022AGUFMEP42D1640M/abstract"
+            }
+        ]
+    }
+]

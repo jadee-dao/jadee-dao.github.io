@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - Jadelynn Dao Mac</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-top">
+                <div class="title-block">
+                    <h1>Jadelynn Dao Mac</h1>
+                    <p class="subtitle">PhD Student in CS @ University of Tech</p>
+                </div>
+                <div class="social-icons">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                </div>
+            </div>
+            <nav>
+                <a href="index.html#about" class="nav-tab">About</a>
+                <a href="index.html#news" class="nav-tab active">News</a>
+                <a href="index.html#publications" class="nav-tab">Publications</a>
+                <a href="index.html#contact" class="nav-tab">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="news-archive">
+            <h2>All News</h2>
+            <ul id="news-list" class="news-list">
+                <!-- News items will be inserted here by JavaScript -->
+                <li>Loading news...</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Last updated: November 2025.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Load all news items
+        document.addEventListener('DOMContentLoaded', () => {
+            loadNews();
+        });
+    </script>
+</body>
+
+</html>
