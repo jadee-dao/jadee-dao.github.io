@@ -54,7 +54,10 @@ async function loadPublications() {
                 <div class="pub-content">
                     <span class="pub-title">${pub.title}</span>
                     <span class="pub-authors">${pub.authors}</span>
-                    <span class="pub-venue">${pub.venue}, ${pub.year}</span>
+                    <div class="pub-meta">
+                        <span class="pub-venue">${pub.venue}</span>
+                        <span class="pub-year">${pub.year}</span>
+                    </div>
                     <div class="pub-links">${linksHtml}</div>
                 </div>
             `;

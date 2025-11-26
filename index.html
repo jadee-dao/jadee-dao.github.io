@@ -5,17 +5,17 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SCCFE5GMSF"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'G-SCCFE5GMSF');
+        gtag('config', 'G-SCCFE5GMSF');
     </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jadelynn Dao - PhD Student</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -44,6 +44,7 @@
                 <a href="#about" class="nav-tab">About</a>
                 <a href="#news" class="nav-tab">News</a>
                 <a href="#publications" class="nav-tab">Publications</a>
+                <a href="#teaching" class="nav-tab">Teaching</a>
                 <a href="#contact" class="nav-tab">Contact</a>
             </nav>
         </div>
@@ -68,7 +69,8 @@
                     </p>
                     <p>
                         I am fortunate to be supported by the NSF Graduate Research Fellowship and a Stanford Graduate
-                        Fellowship. I also am a venture capital fellow with <a href="https://pear.vc/how-we-invest/our-verticals/ai/">Pear VC</a>.
+                        Fellowship. I also am a venture capital fellow with <a
+                            href="https://pear.vc/how-we-invest/our-verticals/ai/">Pear VC</a>.
                     </p>
                 </div>
                 <div class="profile-photo">
@@ -96,6 +98,27 @@
             </div>
         </section>
 
+        <section id="teaching">
+            <h2>Teaching</h2>
+            <div class="teaching-content">
+                <h3>Teaching Assistant</h3>
+                <ul class="teaching-list">
+                    <li>
+                        <strong>CMS 9</strong> <em>Introduction to Research in Computing and Mathematical Sciences</em>
+                        <span class="date">Fall 2025</span>
+                    </li>
+                    <li>
+                        <strong>CS/CNS/EE 156b</strong> <em>Learning Systems: Projects</em>
+                        <span class="date">Spring 2024</span>
+                    </li>
+                    <li>
+                        <strong>CS/CNS/EE 156a</strong> <em>Learning Systems: Theory</em>
+                        <span class="date">Fall 2023</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
         <section id="contact">
             <h2>Contact</h2>
             <p>
@@ -111,7 +134,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=1"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             loadNews(3);
