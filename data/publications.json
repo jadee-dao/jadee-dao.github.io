@@ -3,6 +3,7 @@
         "title": "Stressomic: A wearable microfluidic biosensor for dynamic profiling of multiple stress hormones in sweat",
         "authors": "Tu, Yeom, Ulloa, Solomon, Min, Heng, Kim, Dao, Vemu, Pang, Wang, Kim, Gao*",
         "venue": "Science Advances",
+        "medium": "Article",
         "year": "2025",
         "image": "images/stressomic.png",
         "links": [
@@ -16,6 +17,7 @@
         "title": "Physiological Biomarkers of State Anxiety: Feature-Based Algorithm Development and Validation Using Electrooculography and Electrodermal Activity During a Cold Pressor Test",
         "authors": "Dao, Liu, Solomon, Solomon*",
         "venue": "Journal of Medical Internet Research and PubMed",
+        "medium": "Article",
         "year": "2025",
         "image": "images/anxiety.png",
         "links": [
@@ -28,7 +30,8 @@
     {
         "title": "Touchless, Gesture-based Human Interface Device",
         "authors": "Dao, Deepak",
-        "venue": "US Patent",
+        "venue": "US Patent Office",
+        "medium": "Patent",
         "year": "2024",
         "image": "images/gesture.png",
         "links": [
@@ -41,7 +44,8 @@
     {
         "title": "A comprehensive map of martian South Polar region araneiform locations and morphological analysis",
         "authors": "Mc Keown, Diniega, Dao, Hansen, Portyankina, Piqueux, Aye",
-        "venue": "American Geophysical Union Fall Meeting (Poster)",
+        "venue": "American Geophysical Union Fall Meeting",
+        "medium": "Poster",
         "year": "2022",
         "image": "images/mars.png",
         "links": [

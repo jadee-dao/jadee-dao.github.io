@@ -1,0 +1,41 @@
+[
+    {
+        "company": "Rippling x Kleiner Perkins",
+        "logos": [
+            "images/rippling.png",
+            "images/kp.png"
+        ],
+        "team": "R&D, Applicant Tracking",
+        "year": "2025",
+        "description": "Developed an AI resume parsing agent from 0 to 1, resulting in an estimated ARR of $6.5M. This was completed with support from the Kleiner Perkins Fellows Program.",
+        "link": "https://www.rippling.com/products/hr/recruiting",
+        "link_text": "Rippling Recruiting AI Products"
+    },
+    {
+        "company": "Google",
+        "logo": "images/google.png",
+        "team": "Devices, Sensor Algorithms",
+        "year": "2024",
+        "description": "Combined deep learning and extended Kalman filters for real-time IMU uncertainty estimation. Characterizing sensor noise, improving the precision and stability of sensor fusion algorithms on Google's consumer hardware.",
+        "link": null,
+        "link_text": null
+    },
+    {
+        "company": "Apple",
+        "logo": "images/apple.png",
+        "team": "Health, Multimodal & Longitudinal ML",
+        "year": "2023",
+        "description": "Studied longitudinal, multimodal Apple Watch and iPhone data to discover novel artifacts in aggregated biosensor data and detect physiological events across demographic populations.",
+        "link": "https://www.apple.com/newsroom/pdfs/Health-Report-October-2023.pdf#page=7",
+        "link_text": "Key Apple Health and Fitness Metrics"
+    },
+    {
+        "company": "NASA JPL",
+        "logo": "images/jpl.png",
+        "team": "Mars Science",
+        "year": "2022",
+        "description": "Studied different araneiform features on Mars to better understand the geology and ancient seasonal dynamics of the Martian South Polar region.",
+        "link": "https://www.space.com/nasa-recreates-mars-spiders-on-earth",
+        "link_text": "Pop Science Article on Mars Spiders"
+    }
+]
