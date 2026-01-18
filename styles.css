@@ -1,28 +1,31 @@
 :root {
     --font-main: 'Inter', system-ui, -apple-system, sans-serif;
 
-    /* New Palette */
+    /* Palette - Warm & Vibrant */
     --color-bg: #ffffff;
-    /* White */
-    --color-text: #17243F;
-    /* Dark Navy */
-    --color-text-light: #4b5563;
-    /* Softer Navy/Grey */
-    --color-accent-lime: #DFF478;
-    --color-accent-periwinkle: #788CE3;
-    --color-accent-blue: #92BAD5;
+    /* Light off white */
+    --color-text: #1E1E1E;
+    /* Off black */
+    --color-text-secondary: #818181;
+    /* Faded Blue - Using for secondary text/subtitles for color */
+    --color-text-nav: #69A6C0;
+    --color-text-nav-hover: #ACD3E8;
+    --color-accent: #F2A919;
+    /* Tangerine - Pop */
+    --color-hover-bg: #FFF8DB;
+    /* Dark off white (Warm) */
 
-    --color-card-bg: #ffffff;
-    --color-border: rgba(23, 36, 63, 0.1);
-    /* Navy with opacity */
+    --border-hairline: 1px solid rgba(30, 30, 30, 0.1);
+    --border-bold: 2px solid #1E1E1E;
 
-    --shadow-sm: 0 1px 2px 0 rgba(23, 36, 63, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(23, 36, 63, 0.1), 0 2px 4px -1px rgba(23, 36, 63, 0.06);
+    --max-width: 1000px;
+    --grid-gap: 2rem;
 
-    --radius-md: 0.5rem;
-    --radius-lg: 0.75rem;
-    --spacing-unit: 1rem;
-    --max-width: 900px;
+    /* Type Scale - Massive & Tight */
+    /* Reduced H1 as requested */
+    --font-size-h1: clamp(2rem, 5vw, 3rem);
+    --font-size-h2: clamp(1.5rem, 3vw, 2.5rem);
+    --font-size-body: 1.05rem;
 }
 
 * {
@@ -33,57 +36,69 @@ body {
     font-family: var(--font-main);
     background-color: var(--color-bg);
     color: var(--color-text);
-    line-height: 1.6;
+    line-height: 1.5;
     margin: 0;
     padding: 0;
-    font-size: 16px;
+    font-size: var(--font-size-body);
+    -webkit-font-smoothing: antialiased;
 }
 
-h1,
-h2,
-h3 {
-    font-weight: 700;
-    color: var(--color-text);
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    letter-spacing: -0.025em;
-}
-
-h1 {
-    font-size: 2.25rem;
-    margin-top: 0;
-    margin-bottom: 0.25rem;
-}
-
-h2 {
-    font-size: 1.5rem;
-    border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 1.5rem;
-}
-
-a {
-    color: var(--color-accent-periwinkle);
-    text-decoration: none;
-    transition: all 0.2s;
-}
-
-a:hover {
-    color: var(--color-accent-hover);
-    text-decoration: underline;
-}
-
+/* Layout */
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 0 2rem;
+    position: relative;
+    border-left: var(--border-hairline);
+    /* Subtle guideline */
+    border-right: var(--border-hairline);
+    min-height: 25vh;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+    color: var(--color-text);
+    /* text-transform: uppercase; Removed */
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+    margin-bottom: 1.5rem;
+    /* Reduced from 2rem for tighter gap */
+    padding-top: 2rem;
+    border-top: var(--border-bold);
+    /* Bold separation for sections */
+    display: table;
+    /* Shrink to fit content for the bold line? Or full width? Let's go full width for grid feel */
+    width: 100%;
+}
+
+a {
+    color: var(--color-text);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(21, 31, 39, 0.2);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+a:hover {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
 }
 
 /* Header */
 .site-header {
-    background-color: transparent;
-    /* Let body bg show through or use white if preferred */
-    padding: 1rem 0 0.25rem;
+    padding: 2rem 0 0 0;
+    /* Updated padding as requested */
 }
 
 .header-top {
@@ -96,538 +111,588 @@ a:hover {
 }
 
 .title-block {
-    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.title-block h1 {
+    margin-bottom: 0.25rem;
+}
+
+.header-profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-bg);
+    /* subtle border */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .subtitle {
     font-size: 1.1rem;
-    color: var(--color-text-light);
+    /* Slightly smaller subtitle */
+    color: var(--color-text-secondary);
+    font-weight: 400;
     margin: 0;
-    font-weight: 500;
+    letter-spacing: -0.02em;
 }
 
+/* Minimal Nav */
+nav {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    /* text-transform: uppercase; Removed */
+    letter-spacing: 0.05em;
+    padding-top: 0.5rem;
+    /* Align with top of text */
+}
+
+.nav-tab {
+    color: var(--color-text-nav);
+    border: none;
+    padding: 0;
+}
+
+.nav-tab.active,
+.nav-tab:hover {
+    color: var(--color-text-nav-hover);
+}
+
+/* Socials - Simple Grid */
 .social-icons {
     display: flex;
     gap: 1rem;
+    margin-top: 1rem;
 }
 
 .social-icons a {
     font-size: 1.25rem;
+    border: none;
     color: var(--color-text);
-    background-color: #f3f4f6;
-    /* Light grey for visibility on white */
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: all 0.2s;
 }
 
 .social-icons a:hover {
-    background-color: var(--color-accent-periwinkle);
-    color: white;
+    color: var(--color-accent);
     transform: translateY(-2px);
-}
-
-nav {
-    display: flex;
-    gap: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.6);
-    padding: 0.5rem;
-    border-radius: 9999px;
-    /* Pill shape container */
-    width: fit-content;
-    backdrop-filter: blur(5px);
-}
-
-.nav-tab {
-    padding: 0.5rem 1.25rem;
-    border-radius: 9999px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    color: var(--color-text-light);
-    border: none;
-}
-
-.nav-tab:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: var(--color-accent-periwinkle);
-}
-
-.nav-tab.active,
-nav a:active {
-    background-color: var(--color-text);
-    color: var(--color-accent-lime);
 }
 
 /* Sections */
 section {
     margin-bottom: 4rem;
+    /* Reduced section gap */
 }
 
-/* Profile Section */
+/* About - "Brand Story" Layout */
 .profile-layout {
-    display: flex;
-    gap: 3rem;
-    align-items: center;
-    background-color: var(--color-card-bg);
-    padding: 2rem;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--color-border);
+    display: block;
+    /* No grid */
+    max-width: 800px;
+    /* Constrain width for readability since it's centered text focus now */
+    margin: 0;
+    /* Left align to match reference? Or User's "show up at front"? Reference was specific. */
+    /* User said "just show up at the front". */
+    /* Let's keep it left aligned with the header content (which is in .container) */
+    /* .container has padding. So margin 0 is fine. */
 }
 
 .profile-text {
-    flex: 1;
+    font-size: 1.15rem;
+    /* Editorial size */
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+.profile-text p:first-of-type {
+    font-size: 1.5rem;
+    /* Hero feel for the first paragraph */
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+.bio-secondary {
+    color: var(--color-text-secondary);
+    /* Faded Blue */
+    opacity: 0.8;
+    /* Slight transparency for "lighter" feel if the blue is too dark */
+}
+
+.profile-text p {
+    margin-bottom: 2rem;
 }
 
 .profile-photo {
-    flex: 0 0 200px;
+    /* No circle, raw rectangle or squircle */
+    display: none;
 }
 
 .profile-img {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    aspect-ratio: 3/4;
     object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid var(--color-bg);
-    box-shadow: var(--shadow-md);
+    filter: grayscale(100%);
+    /* Editorial look */
+    transition: filter 0.3s;
+    display: none;
 }
 
-/* News Section */
-.news-list {
-    list-style: none;
-    padding: 0;
+.profile-img:hover {
+    filter: grayscale(0%);
+}
+
+/* Lists (News, Publications, Teaching) - The Grid Table */
+.news-list,
+.publications-list,
+.teaching-list,
+.industry-grid {
     display: flex;
     flex-direction: column;
-    gap: 0;
-    /* Remove gap, use border for separation */
+    border-top: var(--border-hairline);
+}
+
+/* News Override for Timeline */
+.news-list {
+    border-top: none;
+    /* Remove top border for timeline flow */
+    border-left: 2px solid var(--color-text-nav);
+    /* Timeline line */
+    padding-left: 2rem;
+    /* Spacing from line */
 }
 
 .news-list li {
-    background-color: transparent;
-    padding: 1rem 0;
-    border-radius: 0;
-    box-shadow: none;
-    border: none;
-    border-bottom: 1px solid var(--color-border);
-    display: flex;
-    align-items: baseline;
-    transition: none;
+    position: relative;
 }
 
-.news-list li:hover {
+.news-list li::before {
+    content: '';
+    position: absolute;
+    /* Center dot on the line. 
+       Padding is 2rem. Line is at -2rem relative to content.
+       Dot is 10px. Center of dot is 5px.
+       We want center of dot to be at -2rem (approx center of 2px line).
+       So left = -2rem - 5px + 1px (half line width) = -2rem - 4px approx.
+       Let's tweak visually if needed, but calc is safe.
+    */
+    left: calc(-2rem - 5px);
+    top: 2.5rem;
+    /* Align with text baseline roughly (padding top is 2rem) */
+    width: 12px;
+    height: 12px;
+    background-color: var(--color-text-nav);
+    border-radius: 50%;
+    outline: 4px solid var(--color-bg);
+    /* Creates a gap in the line */
+}
+
+.news-list li,
+.publication-item,
+.teaching-list li,
+.industry-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    /* Date/Year | Content */
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: var(--border-hairline);
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+    align-items: baseline;
+    transition: background-color 0.2s;
+}
+
+.news-list li:hover,
+.publication-item:hover,
+.teaching-list li:hover,
+.industry-item:hover {
+    background-color: var(--color-hover-bg);
+    /* Warm hover */
+    /* Very subtle hover bg */
     transform: none;
     box-shadow: none;
-    border-color: var(--color-border);
-    /* Keep border color consistent */
+    border-color: var(--color-text);
+    /* Darker border on hover */
 }
 
+.teaching-list li {
+    padding: 1rem 0;
+    /* Reduced spacing override for Teaching section */
+}
+
+/* Specific Content Alignments */
 .news-date {
-    flex: 0 0 120px;
     font-weight: 700;
-    color: var(--color-text);
     font-size: 0.9rem;
+    color: var(--color-text);
     text-transform: uppercase;
+    background: none;
+    padding: 0;
+    text-align: left;
     letter-spacing: 0.05em;
-    background-color: var(--color-accent-lime);
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    text-align: center;
-    margin-right: 1.5rem;
-    font-size: 0.8rem;
+    grid-column: 1;
+    /* Explicitly place in column 1 */
 }
 
-/* Publications Section */
-.publications-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+.news-content {
+    grid-column: 2;
+    /* Content in column 2 */
 }
 
-.publication-item {
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
-    background-color: var(--color-card-bg);
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--color-border);
-    transition: transform 0.2s, box-shadow 0.2s;
+/* News Footer Link */
+.news-footer {
+    text-align: right;
+    /* Asymmetric placement? Or align with content? */
+    /* Swiss style often likes alignment. Let's align with content column (col 2) but it's outside the grid list.. */
+    /* Just right align for now or make it a block. */
+    padding-top: 2rem;
+    text-align: left;
+    margin-left: 120px;
+    /* Indent to match content column */
+    padding-left: 2rem;
+    /* Gap */
 }
 
-.publication-item:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--color-accent-periwinkle);
+.news-footer a {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
 }
 
+@media (max-width: 768px) {
+    .news-footer {
+        margin-left: 0;
+        padding-left: 0;
+    }
+}
+
+
+.date {
+    /* Teaching date */
+    font-weight: 700;
+    text-transform: uppercase;
+    background: none;
+    color: var(--color-text);
+    padding: 0;
+    float: none;
+    /* override previous float */
+    font-size: 0.9rem;
+}
+
+/* Teaching override: Content is complex */
+.teaching-list li {
+    grid-template-columns: 1fr 120px;
+    /* Content | Date (Right aligned for teaching?) Or stick to left? */
+    /* Let's be consistent: Date Left? Or Context?
+       Let's try: Date Left for everything. Swiss style loves alignment.
+    */
+    grid-template-columns: 120px 1fr;
+    align-items: start;
+}
+
+.teaching-list .date {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+}
+
+.teaching-info {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* Publications Specifics */
 .pub-image-container {
-    flex-shrink: 0;
+    display: block;
+    /* Show images */
     width: 120px;
-    height: 120px;
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: var(--color-bg);
-    border: 1px solid var(--color-border);
+    height: auto;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    /* Slight border for white papers */
+    background: #fff;
+    padding: 4px;
+    /* White frame */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-top: 0.4rem;
+    /* Optical alignment with Title Text */
 }
 
 .pub-image {
     width: 100%;
-    height: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 1;
+    /* Square */
     object-fit: cover;
-    transition: transform 0.3s ease;
 }
 
-.publication-item:hover .pub-image {
-    transform: scale(1.05);
+/* Re-thinking Pubs for Grid: 
+   [Image]  [Content] 
+*/
+
+.publication-item {
+    grid-template-columns: 120px 1fr;
+    /* Image | Content */
+    align-items: start;
+    /* Top align */
+}
+
+.pub-year {
+    font-weight: 700;
+    color: var(--color-text);
+    background: none;
+    padding: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-nav);
+    font-weight: 600;
 }
 
 .pub-content {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
-    flex: 1;
+    gap: 0.5rem;
 }
 
 .pub-title {
-    font-weight: 700;
-    font-size: 1.125rem;
-    display: block;
-    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.2;
     color: var(--color-text);
 }
 
 .pub-authors {
-    display: block;
-    color: var(--color-text-light);
-    margin-bottom: 0.25rem;
-}
-
-.pub-venue {
-    display: inline-block;
-    background-color: var(--color-accent-blue);
-    /* Light indigo background */
-    color: white;
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    width: fit-content;
-    margin-bottom: 0;
-}
-
-.pub-medium {
-    display: inline-block;
-    background-color: var(--color-accent-lime);
-    color: var(--color-text);
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    width: fit-content;
-    margin-bottom: 0;
-}
-
-.pub-year {
-    display: inline-block;
-    background-color: var(--color-accent-periwinkle);
-    color: white;
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    width: fit-content;
+    color: var(--color-text-secondary);
+    font-size: 1rem;
 }
 
 .pub-meta {
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    margin-top: 0.5rem;
     align-items: center;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
+    /* Align items */
+}
+
+.pub-venue {
+    color: var(--color-accent);
+    background: none;
+    padding: 0;
 }
 
 .pub-links {
     margin-top: 0.5rem;
-    display: flex;
-    gap: 1rem;
-}
-
-.pub-links a {
-    font-weight: 600;
-    font-size: 0.875rem;
-    display: inline-flex;
-    align-items: center;
-    color: var(--color-accent-periwinkle);
-}
-
-.pub-links a:hover {
-    text-decoration: underline;
-}
-
-/* Contact Section */
-#contact p {
-    background-color: var(--color-card-bg);
-    padding: 2rem;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--color-border);
-    text-align: center;
-}
-
-/* Industry Section */
-.industry-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* 3 columns on laptop */
     gap: 1.5rem;
 }
 
-@media (max-width: 768px) {
-    .industry-grid {
-        grid-template-columns: repeat(2, 1fr);
-        /* 2 columns on phone/tablet */
-    }
+.pub-links a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Industry - List View with Logos */
+.industry-grid {
+    display: flex;
+    flex-direction: column;
+    border-top: var(--border-hairline);
 }
 
 .industry-item {
-    background-color: var(--color-card-bg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    transition: all 0.2s;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    /* Logo | Content */
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: var(--border-hairline);
+    align-items: start;
+    transition: background-color 0.2s;
 }
 
 .industry-item:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--color-accent-periwinkle);
+    background-color: var(--color-hover-bg);
 }
 
 .industry-logo-container {
-    width: auto;
-    /* height: 60px; Removed to let logos determine height */
-    /* background-color: white; Removed to show clean circles */
-    /* border-radius: 8px; */
     display: flex;
-    align-items: center;
-    /* justify-content: center; */
-    padding: 0;
-    gap: 8px;
-    /* More space */
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .industry-logo {
-    width: 48px;
-    height: 48px;
-    /* Fixed size */
-    flex: 0 0 auto;
-    /* Don't shrink */
-    aspect-ratio: 1;
+    width: 64px;
+    height: 64px;
     object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Shadow behind circles */
+    /* or contain depending on logo */
+    border-radius: 14px;
+    /* App-like rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    /* Subtle shadow */
     background-color: white;
-    /* Ensure consistent background if transparent png */
+    /* Ensure transparency looks okay */
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .industry-content {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
-    flex: 1;
-    /* Added to fill height */
 }
 
 .industry-header {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    align-items: baseline;
+    /* Align text baselines */
+    gap: 0.75rem;
+    flex-wrap: wrap;
 }
 
 .industry-company {
+    font-size: 1.2rem;
     font-weight: 700;
-    font-size: 1.1rem;
     color: var(--color-text);
 }
 
 .industry-year {
     font-size: 0.85rem;
-    color: var(--color-text-light);
-    background-color: #f3f4f6;
-    padding: 2px 8px;
-    border-radius: 12px;
+    color: var(--color-text-nav);
+    /* Matching nav color as requested */
+    font-weight: 500;
+    /* Remove old pill styling if any */
+    background: none;
+    padding: 0;
+    border-radius: 0;
 }
 
 .industry-team {
-    font-weight: 600;
-    font-size: 0.95rem;
-    color: var(--color-accent-blue);
-}
-
-.industry-desc {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-    line-height: 1.5;
-    margin-top: 0.5rem;
-    flex-grow: 1;
-    /* Push link to bottom */
-}
-
-.industry-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--color-accent-periwinkle);
-    margin-top: 1rem;
-    width: fit-content;
-}
-
-.industry-link i {
-    font-size: 0.75rem;
-    transition: transform 0.2s;
-}
-
-.industry-link:hover {
-    text-decoration: underline;
-}
-
-.industry-link:hover i {
-    transform: translateX(3px);
-}
-
-.disclaimer-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background-color: rgba(223, 244, 120, 0.3);
-    /* Transparent Lime */
-    color: var(--color-text-light);
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    margin-bottom: 2rem;
-    border: 1px solid var(--color-accent-lime);
-}
-
-/* Teaching Section */
-.teaching-content h3 {
-    font-size: 1.25rem;
-    color: var(--color-text);
-    margin-bottom: 1rem;
-}
-
-.teaching-list,
-.service-list {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 2rem;
-}
-
-.teaching-list li,
-.service-list li {
-    background-color: transparent;
-    padding: 1rem 0;
-    border-radius: var(--radius-md);
-    box-shadow: none;
-    margin-left: 1rem;
-    border-bottom: 1px solid var(--color-border);
-    display: flex;
-    align-items: baseline;
-    transition: none;
-}
-
-.teaching-list strong,
-.service-list strong {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    display: block;
-    font-size: 1.1rem;
-    color: var(--color-text);
+    font-size: 1rem;
+    color: var(--color-text-secondary);
     margin-bottom: 0.25rem;
 }
 
-.teaching-list em,
-.service-list em {
-    font-style: normal;
-    color: var(--color-text-light);
-    font-weight: 500;
-}
-
-.teaching-list .date,
-.service-list .date {
-    float: right;
-    font-weight: 600;
-    color: var(--color-text);
-    text-transform: uppercase;
-    background-color: var(--color-accent-lime);
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    font-size: 0.85rem;
-    margin-left: 0.5rem;
-}
-
-.teaching-list p,
-.service-list p {
-    margin-top: 0.75rem;
-    margin-bottom: 0;
+.industry-desc {
     font-size: 0.95rem;
-    color: var(--color-text-light);
+    line-height: 1.5;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
 }
 
-/* Clearfix for floated date */
-.teaching-list li::after,
-.service-list li::after {
-    content: "";
-    display: table;
-    clear: both;
+.industry-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-text);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
 }
 
-/* Footer */
-.site-footer {
-    margin-top: 4rem;
-    padding: 3rem 0;
-    border-top: 1px solid var(--color-border);
-    color: var(--color-text-light);
-    font-size: 0.875rem;
-    text-align: center;
-    background-color: transparent;
+.industry-link:hover {
+    color: var(--color-accent);
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-    .profile-layout {
-        flex-direction: column-reverse;
-        text-align: center;
+/* Note for Industry: The HTML structure has the year INSIDE .industry-content.
+   We might need to modify HTML or use absolute positioning?
+   Grid can't move nested children out easily without subgrid (not fully supported).
+   Actually, let's keep it simple: formatting inside.
+*/
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.25rem;
     }
 
-    .profile-photo {
-        margin: 0 auto;
+    h1 {
+        font-size: 2.5rem;
     }
 
-    .news-list li {
+    /* Header & Nav */
+    .header-top {
         flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .news-date {
-        margin-bottom: 0;
+        align-items: flex-start;
+        gap: 1rem;
     }
 
     nav {
         flex-wrap: wrap;
-        justify-content: center;
+        /* Allow wrapping */
+        gap: 1rem 1.5rem;
+        /* Row gap | Column gap */
+        width: 100%;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        /* Subtle separator if wrapped */
+    }
+
+    /* Industry List - Tighten for mobile */
+    .industry-item {
+        grid-template-columns: 60px 1fr;
+        /* Smaller logo col */
+        gap: 1rem;
+        padding: 1.5rem 0;
+    }
+
+    .industry-year {
+        grid-column: auto;
+        /* reset */
+    }
+
+    .industry-logo {
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+    }
+
+    /* Publications - Smaller Figure on Left */
+    .publication-item {
+        grid-template-columns: 90px 1fr;
+        /* Smaller figure col */
         gap: 1rem;
     }
+
+    .pub-image-container {
+        width: 90px;
+        margin-top: 0.2rem;
+    }
+
+    .pub-title {
+        font-size: 1.2rem;
+        /* Slightly smaller title */
+    }
+
+    /* News Timeline - Adjust Spacing */
+    .news-list {
+        padding-left: 1.5rem;
+    }
+
+    .news-list li::before {
+        left: calc(-1.5rem - 5px);
+        /* Re-center dot */
+    }
+
+    /* Typography adjustments */
+    .profile-text p:first-of-type {
+        font-size: 1.3rem;
+    }
+}
+
+/* Footer */
+.site-footer {
+    border-top: var(--border-bold);
+    padding: 4rem 0;
+    margin-top: 8rem;
+    text-align: left;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
 }

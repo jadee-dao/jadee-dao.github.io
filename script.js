@@ -49,12 +49,12 @@ async function loadIndustry() {
             //    div.style.cursor = 'pointer';
             // }
 
+            // Logos
+            const logoSrc = item.logos ? item.logos[0] : item.logo;
+
             div.innerHTML = `
                 <div class="industry-logo-container">
-                    ${item.logos
-                    ? item.logos.map(logo => `<img src="${logo}" alt="${item.company}" class="industry-logo">`).join('')
-                    : `<img src="${item.logo}" alt="${item.company}" class="industry-logo" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIgZmlsbD0iI2YwZjBmMCIgLz48L3N2Zz4='">`
-                }
+                    <img src="${logoSrc}" alt="${item.company}" class="industry-logo" onerror="this.style.display='none'">
                 </div>
                 <div class="industry-content">
                     <div class="industry-header">
@@ -63,7 +63,7 @@ async function loadIndustry() {
                     </div>
                     <span class="industry-team">${item.team}</span>
                     <p class="industry-desc">${item.description}</p>
-                    ${item.link ? `<a href="${item.link}" target="_blank" class="industry-link">Link to ${item.link_text || 'Website'} <i class="fas fa-arrow-right"></i></a>` : ''}
+                    ${item.link ? `<a href="${item.link}" target="_blank" class="industry-link">${item.link_text || 'Link'} <i class="fas fa-arrow-right"></i></a>` : ''}
                 </div>
             `;
             list.appendChild(div);
@@ -93,7 +93,7 @@ async function loadPublications() {
 
             div.innerHTML = `
                 <div class="pub-image-container">
-                    <img src="${pub.image}" alt="${pub.title}" class="pub-image">
+                    <img src="${pub.image}" alt="${pub.title}" class="pub-image" onerror="this.style.display='none'">
                 </div>
                 <div class="pub-content">
                     <span class="pub-title">${pub.title}</span>
@@ -103,7 +103,7 @@ async function loadPublications() {
                         <span class="pub-medium">${pub.medium}</span>
                         <span class="pub-year">${pub.year}</span>
                     </div>
-                    <div class="pub-links">${linksHtml}</div>
+                    ${linksHtml ? `<div class="pub-links">${linksHtml}</div>` : ''}
                 </div>
             `;
             pubList.appendChild(div);
