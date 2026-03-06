@@ -184,6 +184,13 @@ nav {
 section {
     margin-bottom: 4rem;
     /* Reduced section gap */
+    display: none;
+    /* Hide by default for tab logic */
+}
+
+section.active,
+section#contact {
+    display: block;
 }
 
 /* About - "Brand Story" Layout */
@@ -412,7 +419,7 @@ section {
 .pub-image-container {
     display: block;
     /* Show images */
-    width: 120px;
+    width: 100px;
     height: auto;
     border: 1px solid rgba(0, 0, 0, 0.1);
     /* Slight border for white papers */
@@ -420,7 +427,7 @@ section {
     padding: 4px;
     /* White frame */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    margin-top: 0.4rem;
+    margin-top: 0.2rem;
     /* Optical alignment with Title Text */
 }
 
@@ -438,10 +445,12 @@ section {
 */
 
 .publication-item {
-    grid-template-columns: 120px 1fr;
+    grid-template-columns: 100px 1fr;
     /* Image | Content */
     align-items: start;
     /* Top align */
+    padding: 1rem 0;
+    gap: 1.5rem;
 }
 
 .pub-year {
@@ -469,17 +478,17 @@ section {
 
 .pub-authors {
     color: var(--color-text-secondary);
-    font-size: 1rem;
+    font-size: 0.95rem;
 }
 
 .pub-meta {
     display: flex;
-    gap: 1rem;
-    font-size: 0.9rem;
+    gap: 0.75rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-weight: 600;
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
     align-items: center;
     /* Align items */
 }
@@ -501,11 +510,131 @@ section {
     text-transform: uppercase;
 }
 
+/* Minimal Mode Toggle */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1.5rem;
+    padding-top: 2rem;
+    border-top: var(--border-bold);
+}
+
+.section-header h2 {
+    border-top: none;
+    padding-top: 0;
+    margin-bottom: 0;
+}
+
+.view-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+/* Toggle Switch Styling */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--color-text-nav);
+}
+
+input:checked+.slider:before {
+    transform: translateX(20px);
+}
+
+.slider.round {
+    border-radius: 20px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Minimal Publications View */
+.publications-list.minimal-view {
+    border-top: none;
+}
+
+.minimal-view .category-header {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text-nav);
+    margin: 2rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.minimal-view .publication-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem 0;
+    gap: 0.25rem;
+    grid-template-columns: none;
+}
+
+.minimal-view .pub-image-container {
+    display: none;
+}
+
+.minimal-view .pub-title {
+    font-size: 1.1rem;
+}
+
+.minimal-view .pub-authors {
+    font-size: 0.9rem;
+}
+
+.minimal-view .pub-meta {
+    margin-top: 0;
+    font-size: 0.8rem;
+}
+
 /* Industry - List View with Logos */
 .industry-grid {
     display: flex;
     flex-direction: column;
     border-top: var(--border-hairline);
+}
+
+.industry-grid.minimal-view {
+    border-top: none;
 }
 
 .industry-item {
@@ -517,6 +646,18 @@ section {
     border-bottom: var(--border-hairline);
     align-items: start;
     transition: background-color 0.2s;
+}
+
+.minimal-view .industry-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem 0;
+    gap: 0.25rem;
+    grid-template-columns: none;
+}
+
+.minimal-view .industry-logo-container {
+    display: none;
 }
 
 .industry-item:hover {
