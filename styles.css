@@ -643,6 +643,18 @@ input:checked+.slider:before {
 .minimal-view .pub-meta {
     margin-top: 0;
     font-size: 0.8rem;
+    align-items: center;
+}
+
+.pub-link-icon {
+    text-decoration: none;
+    color: var(--color-accent);
+    font-weight: 600;
+    line-height: 1;
+}
+
+.pub-link-icon:hover {
+    opacity: 0.7;
 }
 
 /* Industry - List View with Logos */

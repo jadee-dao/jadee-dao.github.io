@@ -218,12 +218,18 @@ function createPublicationElement(pub, isMinimal) {
         `<a href="${link.url}">${link.name}</a>`
     ).join('') : '';
 
+    const minimalLinksHtml = pub.links ? pub.links.map(link =>
+        `<a href="${link.url}" class="pub-link-icon" title="${link.name}" aria-label="${link.name}">↗</a>`
+    ).join('') : '';
+
     if (isMinimal) {
         div.innerHTML = `
             <div class="pub-content">
                 <span class="pub-title">${pub.title}</span>
+                <span class="pub-authors">${pub.authors}</span>
                 <div class="pub-meta">
                     <span class="pub-venue">${pub.venue}</span>
+                    ${minimalLinksHtml}
                     <span class="pub-year">${pub.year}</span>
                 </div>
             </div>
