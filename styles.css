@@ -481,6 +481,25 @@ section#contact {
     font-size: 0.95rem;
 }
 
+.author-mark {
+    color: var(--color-accent);
+    font-size: 0.7em;
+    font-weight: 600;
+    vertical-align: super;
+    margin-left: 1px;
+}
+
+.author-note {
+    font-size: 0.8rem;
+    font-style: italic;
+    opacity: 0.75;
+}
+
+.author-note .author-mark {
+    vertical-align: baseline;
+    margin-right: 2px;
+}
+
 .pub-meta {
     display: flex;
     gap: 0.75rem;

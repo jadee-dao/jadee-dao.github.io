@@ -1,9 +1,9 @@
 [
     {
         "title": "DIRECT: When and Where Should You Allocate Test-Time Compute in Embodied Planners?",
-        "authors": "Dao, Ganai, Abukhadra, Sridhar, Nasr Azadani, Luo, Barrett, Wu, Finn, Pavone",
+        "authors": "<strong>Dao</strong><sup class=\"author-mark\">✦</sup>, Ganai<sup class=\"author-mark\">✦</sup>, Abukhadra, Sridhar, Nasr Azadani, Luo, Barrett, Wu, Finn, Pavone <span class=\"author-note\"><span class=\"author-mark\">✦</span>equal contribution</span>",
         "category": "Robot Learning & Embodied AI",
-        "venue": "arXiv preprint arXiv:2606.12402",
+        "venue": "arXiv preprint",
         "medium": "In Submission",
         "year": "2026",
         "image": "images/direct.png",
@@ -16,7 +16,7 @@
     },
     {
         "title": "GovernorVLA: Adaptive Embodied Reasoning for Long-tail Autonomous Driving",
-        "authors": "Foutter, Dao, Wang, Gammelli, Pavone",
+        "authors": "Foutter, <strong>Dao</strong><sup class=\"author-mark\">✦</sup>, Wang<sup class=\"author-mark\">✦</sup>, Gammelli, Pavone <span class=\"author-note\"><span class=\"author-mark\">✦</span>equal contribution</span>",
         "category": "Robot Learning & Embodied AI",
         "venue": "ICRA 2026 Workshop on Semantics for Reliable Robot Autonomy",
         "medium": "Poster",
@@ -31,9 +31,9 @@
     },
     {
         "title": "Contexts are Never Long Enough: Structured Reasoning for Scalable Question Answering over Long Document Sets",
-        "authors": "Joshi, Shethia, Dao, Lam",
+        "authors": "Joshi, Shethia, <strong>Dao</strong>, Lam",
         "category": "Learning Representations",
-        "venue": "arXiv preprint arXiv:2604.22294",
+        "venue": "arXiv preprint",
         "medium": "In Submission",
         "year": "2026",
         "image": "images/contexts.png",
@@ -46,7 +46,7 @@
     },
     {
         "title": "Stressomic: A wearable microfluidic biosensor for dynamic profiling of multiple stress hormones in sweat",
-        "authors": "Tu, Yeom, Ulloa, Solomon, Min, Heng, Kim, Dao, Vemu, Pang, Wang, Kim, Gao*",
+        "authors": "Tu, Yeom, Ulloa, Solomon, Min, Heng, Kim, <strong>Dao</strong>, Vemu, Pang, Wang, Kim, Gao<sup class=\"author-mark\">✉</sup> <span class=\"author-note\"><span class=\"author-mark\">✉</span>corresponding author</span>",
         "category": "Wearable Health Sensing",
         "venue": "Science Advances",
         "medium": "Article",
@@ -61,7 +61,7 @@
     },
     {
         "title": "Physiological Biomarkers of State Anxiety: Feature-Based Algorithm Development and Validation Using Electrooculography and Electrodermal Activity During a Cold Pressor Test",
-        "authors": "Dao, Liu, Solomon, Solomon*",
+        "authors": "<strong>Dao</strong>, Liu, Solomon, Solomon<sup class=\"author-mark\">✉</sup> <span class=\"author-note\"><span class=\"author-mark\">✉</span>corresponding author</span>",
         "category": "Wearable Health Sensing",
         "venue": "Journal of Medical Internet Research and PubMed",
         "medium": "Article",
@@ -76,7 +76,7 @@
     },
     {
         "title": "Touchless, Gesture-based Human Interface Device",
-        "authors": "Dao, Deepak",
+        "authors": "<strong>Dao</strong>, Deepak",
         "category": "Other",
         "venue": "US Patent",
         "medium": "Patent",
@@ -91,7 +91,7 @@
     },
     {
         "title": "A comprehensive map of martian South Polar region araneiform locations and morphological analysis",
-        "authors": "Mc Keown, Diniega, Dao, Hansen, Portyankina, Piqueux, Aye",
+        "authors": "Mc Keown, Diniega, <strong>Dao</strong>, Hansen, Portyankina, Piqueux, Aye",
         "category": "Other",
         "venue": "American Geophysical Union Fall Meeting",
         "medium": "Poster",
