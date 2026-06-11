@@ -1,5 +1,50 @@
 [
     {
+        "title": "DIRECT: When and Where Should You Allocate Test-Time Compute in Embodied Planners?",
+        "authors": "Dao, Ganai, Abukhadra, Sridhar, Nasr Azadani, Luo, Barrett, Wu, Finn, Pavone",
+        "category": "Robot Learning & Embodied AI",
+        "venue": "arXiv preprint arXiv:2606.12402",
+        "medium": "Preprint",
+        "year": "2026",
+        "image": "images/direct.png",
+        "links": [
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/2606.12402"
+            }
+        ]
+    },
+    {
+        "title": "GovernorVLA: Adaptive Embodied Reasoning for Long-tail Autonomous Driving",
+        "authors": "Foutter, Dao, Wang, Gammelli, Pavone",
+        "category": "Robot Learning & Embodied AI",
+        "venue": "ICRA 2026 Workshop on Semantics for Reliable Robot Autonomy",
+        "medium": "Poster",
+        "year": "2026",
+        "image": "images/governorvla.png",
+        "links": [
+            {
+                "name": "PDF",
+                "url": "https://openreview.net/pdf?id=tgZFh6O1xW"
+            }
+        ]
+    },
+    {
+        "title": "Contexts are Never Long Enough: Structured Reasoning for Scalable Question Answering over Long Document Sets",
+        "authors": "Joshi, Shethia, Dao, Lam",
+        "category": "Learning Representations",
+        "venue": "arXiv preprint arXiv:2604.22294",
+        "medium": "Preprint",
+        "year": "2026",
+        "image": "images/contexts.png",
+        "links": [
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/2604.22294"
+            }
+        ]
+    },
+    {
         "title": "Stressomic: A wearable microfluidic biosensor for dynamic profiling of multiple stress hormones in sweat",
         "authors": "Tu, Yeom, Ulloa, Solomon, Min, Heng, Kim, Dao, Vemu, Pang, Wang, Kim, Gao*",
         "category": "Wearable Health Sensing",
