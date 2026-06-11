@@ -482,22 +482,22 @@ section#contact {
 }
 
 .author-mark {
-    color: var(--color-accent);
+    color: var(--color-text-secondary);
     font-size: 0.7em;
     font-weight: 600;
     vertical-align: super;
     margin-left: 1px;
 }
 
-.author-note {
+.pub-legend {
+    margin-top: 1.25rem;
     font-size: 0.8rem;
-    font-style: italic;
-    opacity: 0.75;
+    color: var(--color-text-secondary);
 }
 
-.author-note .author-mark {
+.pub-legend .author-mark {
     vertical-align: baseline;
-    margin-right: 2px;
+    margin: 0 2px 0 0;
 }
 
 .pub-meta {

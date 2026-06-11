@@ -1,7 +1,7 @@
 [
     {
         "title": "DIRECT: When and Where Should You Allocate Test-Time Compute in Embodied Planners?",
-        "authors": "<strong>Dao</strong><sup class=\"author-mark\">✦</sup>, Ganai<sup class=\"author-mark\">✦</sup>, Abukhadra, Sridhar, Nasr Azadani, Luo, Barrett, Wu, Finn, Pavone <span class=\"author-note\"><span class=\"author-mark\">✦</span>equal contribution</span>",
+        "authors": "<strong>Dao</strong><sup class=\"author-mark\">✦</sup>, Ganai<sup class=\"author-mark\">✦</sup>, Abukhadra, Sridhar, Nasr Azadani, Luo, Barrett, Wu, Finn, Pavone",
         "category": "Robot Learning & Embodied AI",
         "venue": "arXiv preprint",
         "medium": "In Submission",
@@ -16,7 +16,7 @@
     },
     {
         "title": "GovernorVLA: Adaptive Embodied Reasoning for Long-tail Autonomous Driving",
-        "authors": "Foutter, <strong>Dao</strong><sup class=\"author-mark\">✦</sup>, Wang<sup class=\"author-mark\">✦</sup>, Gammelli, Pavone <span class=\"author-note\"><span class=\"author-mark\">✦</span>equal contribution</span>",
+        "authors": "Foutter, <strong>Dao</strong><sup class=\"author-mark\">✦</sup>, Wang<sup class=\"author-mark\">✦</sup>, Gammelli, Pavone",
         "category": "Robot Learning & Embodied AI",
         "venue": "ICRA 2026 Workshop on Semantics for Reliable Robot Autonomy",
         "medium": "Poster",
@@ -46,7 +46,7 @@
     },
     {
         "title": "Stressomic: A wearable microfluidic biosensor for dynamic profiling of multiple stress hormones in sweat",
-        "authors": "Tu, Yeom, Ulloa, Solomon, Min, Heng, Kim, <strong>Dao</strong>, Vemu, Pang, Wang, Kim, Gao<sup class=\"author-mark\">✉</sup> <span class=\"author-note\"><span class=\"author-mark\">✉</span>corresponding author</span>",
+        "authors": "Tu, Yeom, Ulloa, Solomon, Min, Heng, Kim, <strong>Dao</strong>, Vemu, Pang, Wang, Kim, Gao<sup class=\"author-mark\">✧</sup>",
         "category": "Wearable Health Sensing",
         "venue": "Science Advances",
         "medium": "Article",
@@ -61,7 +61,7 @@
     },
     {
         "title": "Physiological Biomarkers of State Anxiety: Feature-Based Algorithm Development and Validation Using Electrooculography and Electrodermal Activity During a Cold Pressor Test",
-        "authors": "<strong>Dao</strong>, Liu, Solomon, Solomon<sup class=\"author-mark\">✉</sup> <span class=\"author-note\"><span class=\"author-mark\">✉</span>corresponding author</span>",
+        "authors": "<strong>Dao</strong>, Liu, Solomon, Solomon<sup class=\"author-mark\">✧</sup>",
         "category": "Wearable Health Sensing",
         "venue": "Journal of Medical Internet Research and PubMed",
         "medium": "Article",
