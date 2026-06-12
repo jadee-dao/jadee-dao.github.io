@@ -21,6 +21,9 @@
     --max-width: 1000px;
     --grid-gap: 2rem;
 
+    /* Hand-drawn squiggle underline (tangerine) for hover states */
+    --squiggle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='5' viewBox='0 0 16 5'%3E%3Cpath d='M0 2.5 Q 2 0.5, 4 2.5 T 8 2.5 T 12 2.5 T 16 2.5' fill='none' stroke='%23F2A919' stroke-width='1.3' stroke-linecap='round'/%3E%3C/svg%3E");
+
     /* Type Scale - Massive & Tight */
     /* Reduced H1 as requested */
     --font-size-h1: clamp(2rem, 5vw, 3rem);
@@ -88,11 +91,35 @@ a {
     text-decoration: none;
     border-bottom: 1px solid rgba(21, 31, 39, 0.2);
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 5px;
+    background: var(--squiggle) repeat-x 0 100%;
+    background-size: 16px 5px;
+    /* Hidden by clipping from the right; hover reveals left-to-right */
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
 }
 
 a:hover {
     color: var(--color-accent);
-    border-bottom-color: var(--color-accent);
+    border-bottom-color: transparent;
+}
+
+a:hover::after {
+    clip-path: inset(0 0 0 0);
+}
+
+::selection {
+    background-color: rgba(242, 169, 25, 0.3);
 }
 
 /* Header */
@@ -157,9 +184,13 @@ nav {
     padding: 0;
 }
 
-.nav-tab.active,
-.nav-tab:hover {
+.nav-tab.active {
     color: var(--color-text-nav-hover);
+}
+
+/* Squiggle alone signals hover; keep the tab's color steady */
+.nav-tab:hover {
+    color: var(--color-text-nav);
 }
 
 /* Socials - Simple Grid */
@@ -167,6 +198,10 @@ nav {
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
+}
+
+.social-icons a::after {
+    display: none;
 }
 
 .social-icons a {
