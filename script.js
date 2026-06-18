@@ -2,10 +2,72 @@ document.addEventListener('DOMContentLoaded', () => {
     // loadNews is now called explicitly in the HTML files with/without limit
     loadPublications();
     loadIndustry();
+    initContactDoodle();
 
     // Handle initial navigation based on hash
     handleNavigation();
 });
+
+// Quirky, fast-and-rough doodles of Jadelynn doing her hobbies.
+// Drop AI-generated (or hand-drawn) images into images/doodles/ and list them here.
+// Add or remove as many as you like — missing files are skipped automatically.
+const DOODLE_SOURCES = [
+    { src: 'images/doodles/coding.png',   alt: 'Doodle of Jadelynn coding cross-legged with headphones' },
+    { src: 'images/doodles/matcha.png',   alt: 'Doodle of Jadelynn walking with a matcha' },
+    { src: 'images/doodles/puzzle.png',   alt: 'Doodle of Jadelynn working on a jigsaw puzzle' },
+    { src: 'images/doodles/swimming.png', alt: 'Doodle of Jadelynn swimming' },
+    { src: 'images/doodles/robot.png',    alt: 'Doodle of Jadelynn bagging groceries with a robot arm' },
+];
+
+function initContactDoodle() {
+    const container = document.getElementById('contact-doodle');
+    const img = document.getElementById('doodle-img');
+    if (!container || !img) return;
+
+    // Preload candidates and keep only the ones that actually exist,
+    // so the slot stays clean before any art is added.
+    const available = [];
+    let pending = DOODLE_SOURCES.length;
+    let current = null;
+
+    function showRandom() {
+        if (available.length === 0) return;
+        let next = available[Math.floor(Math.random() * available.length)];
+        if (available.length > 1) {
+            while (next === current) {
+                next = available[Math.floor(Math.random() * available.length)];
+            }
+        }
+        current = next;
+        img.src = next.src;
+        img.alt = next.alt || 'A little doodle of Jadelynn';
+    }
+
+    function finalize() {
+        if (--pending > 0) return;
+        if (available.length === 0) {
+            container.style.display = 'none';
+            return;
+        }
+        showRandom();
+        if (available.length > 1) {
+            container.classList.add('clickable');
+            container.addEventListener('click', showRandom);
+        }
+    }
+
+    if (pending === 0) {
+        container.style.display = 'none';
+        return;
+    }
+
+    DOODLE_SOURCES.forEach(item => {
+        const test = new Image();
+        test.onload = () => { available.push(item); finalize(); };
+        test.onerror = finalize;
+        test.src = item.src;
+    });
+}
 
 // Listen for hash changes to navigate between sections
 window.addEventListener('hashchange', handleNavigation);

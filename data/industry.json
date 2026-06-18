@@ -23,7 +23,7 @@
     {
         "company": "Apple",
         "logo": "images/apple.png",
-        "team": "Health, Multimodal & Longitudinal ML",
+        "team": "HID, Health Sensing",
         "year": "2023",
         "description": "Studied longitudinal, multimodal Apple Watch and iPhone data to discover novel artifacts in aggregated biosensor data and detect physiological events across demographic populations.",
         "link": "https://www.apple.com/newsroom/pdfs/Health-Report-October-2023.pdf#page=7",
