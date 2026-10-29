@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // loadNews is now called explicitly in the HTML files with/without limit
+    const newsList = document.getElementById('news-list');
+    if (newsList) {
+        const configuredLimit = newsList.dataset.limit;
+        loadNews(configuredLimit ? Number(configuredLimit) : null);
+    }
     loadPublications();
     loadIndustry();
     initContactDoodle();
@@ -73,11 +77,19 @@ function initContactDoodle() {
 window.addEventListener('hashchange', handleNavigation);
 
 function handleNavigation() {
+    const sections = document.querySelectorAll('main > section');
+
+    // Standalone pages such as the news archive are not part of the homepage's
+    // hash-based tab navigation, so their sections should remain visible.
+    if (!document.getElementById('about')) {
+        sections.forEach(section => section.classList.add('active'));
+        return;
+    }
+
     const hash = window.location.hash || '#about';
     const targetId = hash.substring(1);
 
     // Update active state for sections
-    const sections = document.querySelectorAll('main > section');
     sections.forEach(section => {
         // We always skip 'contact' because it might be displayed separately or at bottom
         // But the user said "i only want the about section to show when at home"
@@ -111,6 +123,9 @@ async function loadNews(limit = null) {
 
     try {
         const response = await fetch('data/news.json');
+        if (!response.ok) {
+            throw new Error(`Failed to load news: ${response.status}`);
+        }
         const newsData = await response.json();
 
         newsList.innerHTML = ''; // Clear loading text
@@ -132,7 +147,7 @@ async function loadNews(limit = null) {
     }
 }
 
-let isIndustryMinimalView = false;
+let isIndustryMinimalView = true;
 let industryDataCache = null;
 
 async function loadIndustry() {
@@ -181,6 +196,10 @@ function createIndustryElement(item, isMinimal) {
     div.className = 'industry-item';
 
     const logoSrc = item.logos ? item.logos[0] : item.logo;
+    const logoMarkup = logoSrc ? `
+            <div class="industry-logo-container">
+                <img src="${logoSrc}" alt="${item.company}" class="industry-logo" onerror="this.parentElement.style.display='none'">
+            </div>` : '';
 
     if (isMinimal) {
         div.innerHTML = `
@@ -194,9 +213,7 @@ function createIndustryElement(item, isMinimal) {
         `;
     } else {
         div.innerHTML = `
-            <div class="industry-logo-container">
-                <img src="${logoSrc}" alt="${item.company}" class="industry-logo" onerror="this.style.display='none'">
-            </div>
+            ${logoMarkup}
             <div class="industry-content">
                 <div class="industry-header">
                     <span class="industry-company">${item.company}</span>
@@ -230,7 +247,7 @@ async function loadPublications() {
 
     try {
         if (!publicationsDataCache) {
-            const response = await fetch('data/publications.json');
+            const response = await fetch('data/publications.json', { cache: 'no-cache' });
             publicationsDataCache = await response.json();
         }
         renderPublications();
@@ -284,13 +301,27 @@ function createPublicationElement(pub, isMinimal) {
         `<a href="${link.url}" class="pub-link-icon" title="${link.name}" aria-label="${link.name}">↗</a>`
     ).join('') : '';
 
+    const appearancesHtml = pub.venues ? `
+        <div class="pub-appearances">
+            ${pub.venues.map(venue => `
+                <div class="pub-appearance">
+                    <span class="pub-venue">${venue.name}</span>
+                    ${venue.detail ? `<span class="pub-medium">${venue.detail}</span>` : ''}
+                </div>
+            `).join('')}
+        </div>
+    ` : `
+        <span class="pub-venue">${pub.venue}</span>
+        ${pub.medium ? `<span class="pub-medium">${pub.medium}</span>` : ''}
+    `;
+
     if (isMinimal) {
         div.innerHTML = `
             <div class="pub-content">
                 <span class="pub-title">${pub.title}</span>
                 <span class="pub-authors">${pub.authors}</span>
-                <div class="pub-meta">
-                    <span class="pub-venue">${pub.venue}</span>
+                <div class="pub-meta${pub.venues ? ' pub-meta-multiple' : ''}">
+                    ${appearancesHtml}
                     ${minimalLinksHtml}
                     <span class="pub-year">${pub.year}</span>
                 </div>
@@ -298,15 +329,14 @@ function createPublicationElement(pub, isMinimal) {
         `;
     } else {
         div.innerHTML = `
-            <div class="pub-image-container">
+            ${pub.image ? `<div class="pub-image-container">
                 <img src="${pub.image}" alt="${pub.title}" class="pub-image" onerror="this.style.display='none'">
-            </div>
+            </div>` : ''}
             <div class="pub-content">
                 <span class="pub-title">${pub.title}</span>
                 <span class="pub-authors">${pub.authors}</span>
-                <div class="pub-meta">
-                    <span class="pub-venue">${pub.venue}</span>
-                    <span class="pub-medium">${pub.medium}</span>
+                <div class="pub-meta${pub.venues ? ' pub-meta-multiple' : ''}">
+                    ${appearancesHtml}
                     <span class="pub-year">${pub.year}</span>
                 </div>
                 ${linksHtml ? `<div class="pub-links">${linksHtml}</div>` : ''}

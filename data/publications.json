@@ -3,38 +3,34 @@
         "title": "DIRECT: When and Where Should You Allocate Test-Time Compute in Embodied Planners?",
         "authors": "<strong>Dao</strong><sup class=\"author-mark\">✧</sup>, Ganai<sup class=\"author-mark\">✧</sup>, Abukhadra, Sridhar, Nasr Azadani, Luo, Barrett, Wu, Finn, Pavone",
         "category": "Robot Learning & Embodied AI",
-        "venue": "arXiv preprint",
-        "medium": "In Submission",
+        "venues": [
+            {
+                "name": "Conference on Robot Learning (CoRL)"
+            },
+            {
+                "name": "FMS4RoboPlan @ RSS",
+                "detail": " Oral Presentation"
+            }
+        ],
         "year": "2026",
         "image": "images/direct.png",
         "links": [
             {
                 "name": "arXiv",
                 "url": "https://arxiv.org/abs/2606.12402"
-            }
-        ]
-    },
-    {
-        "title": "GovernorVLA: Adaptive Embodied Reasoning for Long-tail Autonomous Driving",
-        "authors": "Foutter, <strong>Dao</strong><sup class=\"author-mark\">✧</sup>, Wang<sup class=\"author-mark\">✧</sup>, Gammelli, Pavone",
-        "category": "Robot Learning & Embodied AI",
-        "venue": "International Conference on Robotics and Automation (ICRA) 2026 Workshop on Semantics for Reliable Robot Autonomy",
-        "medium": "Poster",
-        "year": "2026",
-        "image": "images/governorvla.png",
-        "links": [
+            },
             {
-                "name": "PDF",
-                "url": "https://openreview.net/pdf?id=tgZFh6O1xW"
+                "name": "Project Page",
+                "url": "https://jadee-dao.github.io/direct/"
             }
         ]
     },
     {
-        "title": "Contexts are Never Long Enough: Structured Reasoning for Scalable Question Answering over Long Document Sets",
+        "title": "SLIDERS: Systematic Reviews via Automated Evidence Synthesis and Reconciliation",
         "authors": "Joshi, Shethia, <strong>Dao</strong>, Lam",
         "category": "Learning Representations",
-        "venue": "arXiv preprint",
-        "medium": "In Submission",
+        "venue": "NeurIPS 2026",
+        "_medium": "Poster",
         "year": "2026",
         "image": "images/contexts.png",
         "links": [
@@ -45,8 +41,33 @@
         ]
     },
     {
+        "title": "GovernorVLA: Adaptive Embodied Reasoning for Long-tail Autonomous Driving",
+        "authors": "Foutter, <strong>Dao</strong><sup class=\"author-mark\">✧</sup>, Wang<sup class=\"author-mark\">✧</sup>, Gammelli, Pavone",
+        "category": "Robot Learning & Embodied AI",
+        "venue": "SRRA @ ICRA",
+        "_medium": "Poster",
+        "year": "2026",
+        "image": "images/governorvla.png",
+        "links": [
+            {
+                "name": "PDF",
+                "url": "https://openreview.net/pdf?id=tgZFh6O1xW"
+            }
+        ]
+    },
+    {
+        "title": "Wearable Affective General Intelligence",
+        "authors": "Solomon, Xu, Liu, <strong>Dao</strong>, Ramírez, Min, Yao, Solomon, Wang, Ji, Sumner, Gao",
+        "category": "Wearable Health Sensing",
+        "venue": "Under Review",
+        "medium": "Manuscript",
+        "year": "2025",
+        "image": "images/wearablegeneral.png",
+        "links": []
+    },
+    {
         "title": "Stressomic: A wearable microfluidic biosensor for dynamic profiling of multiple stress hormones in sweat",
-        "authors": "Tu, Yeom, Ulloa, Solomon, Min, Heng, Kim, <strong>Dao</strong>, Vemu, Pang, Wang, Kim, Gao<sup class=\"author-mark\">✦</sup>",
+        "authors": "Tu, Yeom, Ulloa, Solomon, Min, Heng, Kim, <strong>Dao</strong>, Vemu, Pang, Wang, Kim, Gao",
         "category": "Wearable Health Sensing",
         "venue": "Science Advances",
         "medium": "Article",
@@ -61,7 +82,7 @@
     },
     {
         "title": "Physiological Biomarkers of State Anxiety: Feature-Based Algorithm Development and Validation Using Electrooculography and Electrodermal Activity During a Cold Pressor Test",
-        "authors": "<strong>Dao</strong>, Liu, Solomon, Solomon<sup class=\"author-mark\">✦</sup>",
+        "authors": "<strong>Dao</strong>, Liu, Solomon, Solomon",
         "category": "Wearable Health Sensing",
         "venue": "Journal of Medical Internet Research and PubMed",
         "medium": "Article",
@@ -94,7 +115,7 @@
         "authors": "Mc Keown, Diniega, <strong>Dao</strong>, Hansen, Portyankina, Piqueux, Aye",
         "category": "Other",
         "venue": "American Geophysical Union Fall Meeting",
-        "medium": "Poster",
+        "_medium": "Poster",
         "year": "2022",
         "image": "images/mars.png",
         "links": [

@@ -12,8 +12,8 @@
     --color-text-nav-hover: #ACD3E8;
     --color-accent: #F2A919;
     /* Tangerine - Pop */
-    --color-hover-bg: #FFF8DB;
-    /* Dark off white (Warm) */
+    --color-hover-bg: #f7f7f7;
+    /* Very light gray for list-row hover states */
 
     --border-hairline: 1px solid rgba(30, 30, 30, 0.1);
     --border-bold: 2px solid #1E1E1E;
@@ -285,7 +285,7 @@ section#contact {
 }
 
 .profile-text p:first-of-type {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     /* Hero feel for the first paragraph */
     font-weight: 500;
     color: var(--color-text);
@@ -298,6 +298,52 @@ section#contact {
     /* Faded Blue */
     opacity: 0.8;
     /* Slight transparency for "lighter" feel if the blue is too dark */
+}
+
+.institution-hover {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.institution-hover:hover {
+    color: var(--institution-color);
+}
+
+.institution-stanford {
+    --institution-color: #e31b23;
+    font-size: 0.95em;
+}
+
+.institution-nvidia {
+    --institution-color: #76b900;
+}
+
+.institution-caltech {
+    --institution-color: #ff6c0c;
+}
+
+.institution-pear {
+    --institution-color: #2e7d5b;
+}
+
+.institution-stanford::after {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='5' viewBox='0 0 16 5'%3E%3Cpath d='M0 2.5 Q 2 0.5, 4 2.5 T 8 2.5 T 12 2.5 T 16 2.5' fill='none' stroke='%23E31B23' stroke-width='1.3' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x 0 100%;
+    background-size: 16px 5px;
+}
+
+.institution-nvidia::after {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='5' viewBox='0 0 16 5'%3E%3Cpath d='M0 2.5 Q 2 0.5, 4 2.5 T 8 2.5 T 12 2.5 T 16 2.5' fill='none' stroke='%2376B900' stroke-width='1.3' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x 0 100%;
+    background-size: 16px 5px;
+}
+
+.institution-caltech::after {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='5' viewBox='0 0 16 5'%3E%3Cpath d='M0 2.5 Q 2 0.5, 4 2.5 T 8 2.5 T 12 2.5 T 16 2.5' fill='none' stroke='%23FF6C0C' stroke-width='1.3' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x 0 100%;
+    background-size: 16px 5px;
+}
+
+.institution-pear::after {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='5' viewBox='0 0 16 5'%3E%3Cpath d='M0 2.5 Q 2 0.5, 4 2.5 T 8 2.5 T 12 2.5 T 16 2.5' fill='none' stroke='%232E7D5B' stroke-width='1.3' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x 0 100%;
+    background-size: 16px 5px;
 }
 
 .profile-text p {
@@ -524,12 +570,10 @@ section#contact {
 }
 
 .pub-year {
-    font-weight: 700;
     color: var(--color-text);
     background: none;
     padding: 0;
     font-size: 0.9rem;
-    color: var(--color-text-nav);
     font-weight: 600;
 }
 
@@ -588,7 +632,31 @@ section#contact {
     padding: 0;
 }
 
+.pub-medium {
+    color: var(--color-text-nav);
+}
+
+.pub-meta-multiple {
+    align-items: flex-start;
+}
+
+.pub-appearances {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.pub-appearance {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem 0.75rem;
+}
+
 .pub-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     margin-top: 0.5rem;
     gap: 1.5rem;
 }

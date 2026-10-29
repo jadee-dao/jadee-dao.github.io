@@ -14,13 +14,13 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jadelynn Dao - PhD Student</title>
-    <link rel="stylesheet" href="styles.css?v=4">
+    <title>Jadelynn Dao</title>
+    <link rel="stylesheet" href="styles.css?v=5">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="icon" href="favicon.ico?v=2" type="image/x-icon">
+    <link rel="icon" href="favicon.ico?v=3" type="image/x-icon">
 </head>
 
 <body>
@@ -60,23 +60,29 @@
             <div class="profile-layout">
                 <div class="profile-text">
                     <p>
-                        I am a first-year PhD student in Computer Science at Stanford! Currently, I am rotating within
-                        the <a href="https://ai.stanford.edu/">Stanford AI Lab</a> and the <a
-                            href="https://src.stanford.edu/">Stanford Robotics Center</a>.
-                        <span class="bio-secondary">I am broadly interested in developing techniques that bridge the
-                        gap between low-level perception and high-level decision-making for autonomous, embodied AI.</span>
+                        I am a second-year Computer Science PhD student at <a
+                            class="institution-hover institution-stanford"
+                            href="https://ai.stanford.edu/">Stanford University</a>, advised by <a
+                            href="https://asl.stanford.edu/">Marco Pavone</a> and <a
+                            href="https://jiajunwu.com/">Jiajun Wu</a>. I am also affiliated with <a
+                            class="institution-hover institution-nvidia"
+                            href="https://research.nvidia.com/labs/gear/">NVIDIA Research (GEAR)</a>.
+                        <span class="bio-secondary">I am broadly interested in developing techniques
+                            that bridge low-level perception and control with high-level decision-making for autonomous, embodied AI.</span>
                     </p>
                     <p>
-                        Previously, I completed my undergrad at Caltech, where I focused on multimodal representation
-                        learning and real-time wearable sensor algorithms to interpret noisy time-series data at the <a
-                            href="https://www.gao.caltech.edu/">Gao Research Group</a>. I also interned with ML teams at
-                        Apple and Google, building novel data fusion models for sensing across their suite of devices.
+                        Previously, I completed my undergrad at the <a class="institution-hover institution-caltech"
+                            href="https://www.caltech.edu/">California Institute of Technology</a>, where my research at the <a
+                            href="https://www.gao.caltech.edu/">Gao Research Group</a> focused on multimodal representation learning
+                        and real-time wearable sensor algorithms that generalize across modalities and platforms.
+                        I also interned with ML teams at Apple and Google, building novel
+                        sensor fusion models across their suite of devices.
                     </p>
                     <p>
-                        I am fortunate to be supported by the NSF Graduate Research Fellowship and a Stanford Graduate
-                        Fellowship. I also am a venture capital fellow with <a
-                            href="https://pear.vc/how-we-invest/our-verticals/ai/">Pear VC</a>, where I am particularly
-                        passionate about supporting the AI + deeptech ecosystem and translating research into scalable
+                        I am fortunate to be supported by the NSF GRFP and a Stanford Graduate
+                        Fellowship. I also was a venture capital fellow with <a class="institution-hover institution-pear"
+                            href="https://pear.vc/how-we-invest/our-verticals/ai/">Pear VC</a>, where I developed a passion for
+                         growing the AI + deeptech ecosystem and translating research into scalable
                         companies.
                     </p>
                 </div>
@@ -85,7 +91,7 @@
 
         <section id="news">
             <h2>News</h2>
-            <ul id="news-list" class="news-list">
+            <ul id="news-list" class="news-list" data-limit="3">
                 <!-- News items will be inserted here by JavaScript -->
                 <li>Loading news...</li>
             </ul>
@@ -112,7 +118,7 @@
             <p class="pub-legend">
                 <span class="author-mark">✧</span> equal contribution
                 &nbsp;&nbsp;
-                <span class="author-mark">✦</span> corresponding/senior author
+                <!-- <span class="author-mark">✦</span> corresponding/senior author -->
             </p>
         </section>
 
@@ -122,7 +128,7 @@
                 <div class="view-toggle">
                     <span class="toggle-label">Minimal</span>
                     <label class="switch">
-                        <input type="checkbox" id="industry-view-toggle">
+                        <input type="checkbox" id="industry-view-toggle" checked>
                         <span class="slider round"></span>
                     </label>
                 </div>
@@ -169,7 +175,7 @@
             <div class="contact-layout">
                 <p class="contact-info">
                     📍 Palo Alto, CA<br>
-                    jadelynn [at] stanford [dot] edu<br>
+                    <a href="mailto:jadelynndao@stanford.edu">jadelynndao@stanford.edu</a><br>
                     <a href="#">GitHub</a> | <a href="#">Google Scholar</a> | <a href="#">LinkedIn</a> | <a href="#">X</a>
                 </p>
                 <div class="contact-doodle" id="contact-doodle" title="psst… click me">
@@ -181,16 +187,11 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p>Last updated: June 2026.</p>
+            <p>Last updated: July 2026.</p>
         </div>
     </footer>
 
-    <script src="script.js?v=1"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            loadNews(3);
-        });
-    </script>
+    <script src="script.js?v=4"></script>
 </body>
 
 </html>

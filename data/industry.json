@@ -1,5 +1,14 @@
 [
     {
+        "company": "NVIDIA",
+        "logo": "images/nvidia.png",
+        "team": "Generalist Embodied Agents",
+        "year": "2026",
+        "description": "Researching reasoning methods for hierarchical robot policies that generalize across tasks and environments.",
+        "link": "https://research.nvidia.com/labs/gear/",
+        "link_text": "NVIDIA GEAR"
+    },
+    {
         "company": "Rippling x Kleiner Perkins",
         "logos": [
             "images/rippling.png",
