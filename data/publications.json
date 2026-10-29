@@ -60,7 +60,7 @@
         "authors": "Solomon, Xu, Liu, <strong>Dao</strong>, Ramírez, Min, Yao, Solomon, Wang, Ji, Sumner, Gao",
         "category": "Wearable Health Sensing",
         "venue": "Under Review",
-        "medium": "Manuscript",
+        "medium": "Article",
         "year": "2025",
         "image": "images/wearablegeneral.png",
         "links": []
@@ -115,7 +115,6 @@
         "authors": "Mc Keown, Diniega, <strong>Dao</strong>, Hansen, Portyankina, Piqueux, Aye",
         "category": "Other",
         "venue": "American Geophysical Union Fall Meeting",
-        "_medium": "Poster",
         "year": "2022",
         "image": "images/mars.png",
         "links": [
